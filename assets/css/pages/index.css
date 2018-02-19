@@ -1,0 +1,33 @@
+.search-box {
+    height: 50px;
+    margin-top: 10px;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 80%;
+    border: none;
+    height: 50px;
+    border: #666 1px solid;
+    display: inline;
+}
+
+.search-box button {
+    width: 20%;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+    border: #666 1px solid;
+    color: #666;
+    display: inline;
+    border-left: none;
+}
+
+.search-box button:hover {
+    background-color: #666 ;
+    color: white;
+    -webkit-transition: background-color .75s, color .5s;
+    transition: background-color .75s, color .5s;
+}
+

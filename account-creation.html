@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inscribe</title>
+        
+        <!-- Link to CSS Files -->
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <!-- Google Fonts -->
+            <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,700,700i" rel="stylesheet">
+            <!-- Personal CSS -->
+            <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+    </head>
+    <body>        
+        <header>
+            <div class="container">
+                <div class="logo col-md-2 col-sm-4 col-xs-2">
+                    <a href="index.html"><img src="assets/img/Inscribe.png" id="logo-main"></img></a>
+                </div>
+                <div class="nav col-md-offset-6 col-md-2 col-sm-offset-4 col-sm-2 col-xs-offset-6 col-xs-2">
+                    <p id="writeHeader" class="hide"><a href="write.html">Write</a></p>
+                </div> 
+                <div class="profile col-md-2 col-sm-2 col-xs-2">
+                    <p class="nav-login"><a href="login.html">Login</a></p>
+                    <div class="photo hidden dropdown">
+                        <nav>
+                          <ul>
+                            <li> <img></img>
+                              <ul class="drop-menu menu-1">
+                                <li><a href="mystories.html">My Stories</a></li>
+                                <li><a href="account.html">Account</a></li>
+                                <li onclick="navLogout();">Logout</li>
+                              </ul>
+                            </li>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="center">
+            <div class="initialProfile">
+                <div class="upload-button">
+                    <img src="assets/img/avatar.png" class="upload-button-img"></img>
+                </div>
+                <progress value="0" max="100" id="uploader">0%</progress>
+                <p>Please Upload a Square Image</p>
+                <input class="file-upload" type="file" accept="image/*" name="upload" id="fileButton">
+                <input type="text" placeholder="Name" id="profileName"/>
+                <textarea placeholder="Bio (Optional)" id="profileBio"></textarea>
+                <button onclick="createProfile();">Create</button>
+             </div>   
+        </div>
+        
+        <!-- JavaScript -->
+            <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+            <script>
+              // Initialize Firebase
+              var config = {
+                apiKey: "AIzaSyD-rl5-XzcWU26waSOikO12JbHyrpBeaM8",
+                authDomain: "inscribe-581cc.firebaseapp.com",
+                databaseURL: "https://inscribe-581cc.firebaseio.com",
+                storageBucket: "inscribe-581cc.appspot.com",
+                messagingSenderId: "985426235245"
+              };
+              firebase.initializeApp(config);
+            </script>
+            <script src="assets/js/auth.js"></script>
+            <script src="assets/js/jquery-3.1.1.min.js"></script>
+            <script>
+                window.onload = uploadImg();
+                window.onload = storeImg();
+            </script>
+            
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+/* 
+-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-
+           Inscribe
+     COURSE CODE: ICS 4UR
+ Date Updated: November 11, 2016
+-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-
+       Project Owners:
+       - Varun Khatri
+      - Suchir Navalyal
+        - Alay Shah
+      - Abdullah Khokhar
+-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-
+        Main CSS File
+        -------------
+ Imports all CSS files into one
+        Separated by 
+ - typography 
+ - pages 
+ - modules
+-=+=-=+=-=+=-=+=-=+=-=+=-=+=-=+=-
+CSS File Structure
+    css/styles.css
+    css/modules/header.css
+    css/pages/index.css
+    css/pages/login.css
+    css/typography/type.css
+*/
+
+@import 'typography/type.css';
+
+@import 'pages/auth.css';
+@import 'pages/index.css';
+@import 'pages/write.css';
+@import 'pages/account-creation.css';
+@import 'pages/account.css';
+
+@import 'modules/header.css';
+@import 'modules/modal.css';
+
+@import 'animate.css';

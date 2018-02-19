@@ -1,0 +1,7 @@
+{
+  "name": "Inscribe Chat",
+  "short_name": "Inscribe Chat",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}

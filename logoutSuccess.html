@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- ICS 4UR, October 03, 2016 -->
+<html>
+    <head>
+        <title>Inscribe</title>
+        
+        <!-- Link to CSS Files -->
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <!-- Google Fonts -->
+            <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,700,700i" rel="stylesheet">
+            <!-- Personal CSS -->
+            <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+            
+        <!--ALL CODE BELOW THIS POINT-->
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="logo col-md-2 col-sm-4 col-xs-2">
+                    <a href="index.html"><img src="assets/img/Inscribe.png" id="logo-main"></img></a>
+                </div>
+                <div class="nav col-md-offset-6 col-md-2 col-sm-offset-4 col-sm-2 col-xs-offset-6 col-xs-2">
+                    <p id="writeHeader" class="hide"><a href="write.html">Write</a></p>
+                </div> 
+                <div class="profile col-md-2 col-sm-2 col-xs-2">
+                    <p class="nav-login"><a href="login.html">Login</a></p>
+                    <div class="photo hidden dropdown">
+                        <nav>
+                          <ul>
+                            <li> <img></img>
+                              <ul class="drop-menu menu-1">
+                                <li><a href="mystories.html">My Stories</a></li>
+                                <li><a href="account.html">Account</a></li>
+                                <li onclick="navLogout();">Logout</li>
+                              </ul>
+                            </li>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+        <div class="center">
+            <h3>You have successfully been logged out!</h3>
+            <a href="login.html"><button id="return-button">Return to login</button></a>
+        </div>
+
+        <!-- ALL CODE ABOVE THIS POINT-->
+        <!-- JavaScript -->
+        <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+            apiKey: "AIzaSyD-rl5-XzcWU26waSOikO12JbHyrpBeaM8",
+            authDomain: "inscribe-581cc.firebaseapp.com",
+            databaseURL: "https://inscribe-581cc.firebaseio.com",
+            storageBucket: "inscribe-581cc.appspot.com",
+            messagingSenderId: "985426235245"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script src="assets/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/auth.js"></script>
+    </body>
+</html>

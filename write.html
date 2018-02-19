@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!-- ICS 4UR, October 11, 2016 -->
+<html>
+   <head>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <!-- Google Fonts -->
+            <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,700,700i" rel="stylesheet">
+            <!-- Personal CSS -->
+            <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+            <link rel="stylesheet" href="assets/css/easy-autocomplete.min.css"> 
+   </head>
+   
+   <!--All code will be below this point-->
+   <body>
+        <!--Header begins-->
+        <header>
+            <div class="container">
+                <div class="logo col-md-2 col-sm-4 col-xs-2">
+                    <a href="index.html"><img src="assets/img/Inscribe.png" id="logo-main"></img></a>
+                </div>
+                <div class="nav col-md-offset-6 col-md-2 col-sm-offset-4 col-sm-2 col-xs-offset-6 col-xs-2">
+                    <p id="writeHeader" class="hide"><a href="write.html">Write</a></p>
+                </div> 
+                <div class="profile col-md-2 col-sm-2 col-xs-2">
+                    <p class="nav-login"><a href="login.html">Login</a></p>
+                    <div class="photo hidden dropdown">
+                        <nav>
+                          <ul>
+                            <li> <img></img>
+                              <ul class="drop-menu menu-1">
+                                <li><a href="mystories.html">My Stories</a></li>
+                                <li><a href="account.html">Account</a></li>
+                                <li onclick="navLogout();">Logout</li>
+                              </ul>
+                            </li>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!---- Header Ends --->
+    
+    
+    
+       <!--Writing card begins-->
+        <div class="write-center">
+            <div class= "writing-card container">
+                <input class="titlebox" id="title" type="text" placeholder="Title"></input>
+                <!--Text box for story-->
+                <textarea id="textbox" placeholder="Body"></textarea>
+                <!-------------- location autofill ------------->
+                <input type="text" id="countries" placeholder="Country"></textarea>
+                <!---------------------- Post ------------------>
+                <button onclick="animateModalIn();">Post</button>
+
+                
+                
+                <!---------------------Post to another page from Firebase------------------------>
+                <!-- <button onclick="readUserData()">Print</button> 
+                <button onclick="animateModalIn();">Tags</button>
+                <button id="post-bttn" class="submit-bttn" onclick="checkWrittenData()">Post</button>
+                -->
+            </div>
+        </div>       
+                
+                                            <!-- Tag creation -->
+        
+        <!-- Modal Box For Tags-->
+        <div class="blacken fullscreen initial">
+            
+            <div class="modal-box">
+                <h3>Are you sure you want to post?</h3>
+                <p>You will not be able to edit your work afterwards!</p>
+                
+                <input id="write-tag" type="text" placeholder="Enter Tags"></input>
+                <button id="tag-post" onclick="makeTag();"> Add Tag </button>
+                
+                <div id="tag-area">
+               
+                </div>
+                
+                <button id="post-bttn" class="confirm-bttn submit" onclick="checkWrittenData()">Yes, submit!</button>
+                <button class="confirm-bttn cancel" onclick="closeModal();">No, cancel!</button>
+            </div>
+        </div>
+        
+        <!------------------------- Initilize Firebase ----------------------->
+        <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyD-rl5-XzcWU26waSOikO12JbHyrpBeaM8",
+            authDomain: "inscribe-581cc.firebaseapp.com",
+            databaseURL: "https://inscribe-581cc.firebaseio.com",
+            storageBucket: "inscribe-581cc.appspot.com",
+            messagingSenderId: "985426235245"
+          };
+          firebase.initializeApp(config);
+        </script>
+
+        <!------------------------- Javascript page Link ---------------------->
+        <script src="assets/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/autogrow.min.js"></script>
+        <script src="assets/js/jquery.easy-autocomplete.min.js"></script>
+        <script src="assets/js/write.js"></script>
+        <script type="text/javascript" src="assets/js/auth.js"></script>
+        <script>
+           var options = {
+              url: "assets/json/countries.json",
+            
+            	getValue: "name",
+            
+            	list: {
+            	    
+            		maxNumberOfElements: 4,
+            	    
+            		match: {
+            			enabled: true
+            		}, 
+            		
+            		showAnimation: {
+            			type: "fade", //normal|slide|fade
+            			time: 400,
+            			callback: function() {}
+            		},
+            
+            		hideAnimation: {
+            			type: "slide", //normal|slide|fade
+            			time: 400,
+            			callback: function() {}
+            		},
+            		
+            	}
+            };
+            
+            $("#countries").easyAutocomplete(options);
+        </script>
+   
+   </body>
+   
+</html>

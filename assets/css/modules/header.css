@@ -1,0 +1,163 @@
+header {
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 200;
+}
+
+header .container {
+    border-bottom: 1px solid #dddddd;
+}
+
+header .container .logo {
+    height: 70px;
+}
+
+header .container .logo img {
+    margin-top: 12.5px;
+    height: 45px;
+}
+
+header .container .nav {
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header .container .nav p {
+    text-align: right;
+    font-size: 1.15em;
+    margin: 0;
+}
+
+header .container .nav p a{
+    color: black;
+}
+
+header .container .nav p a:hover {
+    color: #F57170;
+    transition: color .5s;
+    text-decoration: none;
+}
+
+header .container .profile {
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+header .container .profile .nav-login {
+    font-size: 1.15em;
+    margin: 0;
+}
+
+header .container .profile .nav-login a{
+    color: black;
+}
+
+header .container .profile .nav-login a:hover{
+    color: #F57170;
+    transition: color .5s;
+    text-decoration: none;
+}
+
+header .container .profile .photo img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+nav {
+  padding: 5px;
+}
+nav > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+nav > ul > li {
+  width: 100px;
+  height: 55px;
+  line-height: 55px;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+ul.drop-menu {
+  position: absolute;
+  top: 54px;
+  left: 0%;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+}
+
+ul.drop-menu li {
+  background: #666;
+  color: rgba(255, 255, 255, 0.7);
+}
+ul.drop-menu li:hover {
+  background: #606060;
+}
+
+ul.drop-menu li {
+  display: none;
+}
+
+li:hover > ul.drop-menu li {
+  display: block;
+}
+
+li:hover > ul.drop-menu.menu-1 {
+  perspective: 1000px;
+}
+li:hover > ul.drop-menu.menu-1 li {
+  opacity: 0;
+}
+
+li:hover > ul.drop-menu.menu-1 li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+li:hover > ul.drop-menu.menu-1 li:nth-child(1) {
+  animation-name: menu1;
+  animation-duration: 300ms;
+  animation-delay: -150ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+li:hover > ul.drop-menu.menu-1 li:nth-child(2) {
+  animation-name: menu1;
+  animation-duration: 300ms;
+  animation-delay: 0ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+li:hover > ul.drop-menu.menu-1 li:nth-child(3) {
+  animation-name: menu1;
+  animation-duration: 300ms;
+  animation-delay: 150ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes menu1 {
+  0% {
+    opacity: 0;
+    transform: rotateY(-90deg) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg) translateY(0px);
+  }
+}
